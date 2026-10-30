@@ -1,0 +1,151 @@
+/* ==========================================================================
+   Motosu Lake palette, after the KEYKOBO Motosu Lake ABS double-shot keycaps:
+   lake-blue alphas, aqua modifiers, wine-red Esc and Enter, cream Shift keys.
+   Only colors and a few keycap touches live
+   here; delete the <link> to this file in index.html to return to the
+   original palette in site.css. The robot keeps its own colors either way.
+   ========================================================================== */
+
+:root {
+  --key-blue: #24588a;
+  --key-blue-deep: #173f63;
+  --key-aqua: #5aaccd;
+  --key-red: #7b2833;
+  --key-cream: #efebe2;
+
+  --bg: #f2f3f0;
+  --surface: #ffffff;
+  --ink: #132a3d;
+  --ink-2: #3a5266;
+  --ink-3: #63788a;
+  --rule: #d7dfe4;
+  --chip: #e1eff5;
+  --chip-ink: #1d4c74;
+  --accent: #8a2c36;
+  --accent-strong: #6d1f29;
+  --link-line: #5aaccd;
+  --link-hover: #24588a;
+  --label: #24588a;
+  --logo-tile: #ffffff;
+
+  --band: linear-gradient(180deg, #2a5f92 0%, #23578a 55%, #1f4f7f 100%);
+  --band-ink: #f3f0e8;
+  --band-ink-2: #d2dfe9;
+  --band-ink-3: #a9c2d5;
+  --band-rule: rgba(243, 240, 232, 0.2);
+  --band-accent: #93d6ee;
+
+  --g1-grid: rgba(243, 240, 232, 0.1);
+  --g1-grid-strong: rgba(243, 240, 232, 0.2);
+  --g1-ink: #f3f0e8;
+  --g1-accent: #93d6ee;
+  --g1-shadow: 0.3;
+  --g1-rim: 1.35;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1823;
+    --surface: #102434;
+    --ink: #ebe7de;
+    --ink-2: #b9c7d1;
+    --ink-3: #8aa2b3;
+    --rule: #1d3446;
+    --chip: #15344a;
+    --chip-ink: #c3e4f1;
+    --accent: #e2707a;
+    --accent-strong: #f0959c;
+    --link-line: #6cc3df;
+    --link-hover: #93d6ee;
+    --label: #7fc8e3;
+    --logo-tile: #f3f4f2;
+    --band: linear-gradient(180deg, #205686 0%, #1b4b77 60%, #173f66 100%);
+    --g1-shadow: 0.38;
+    --g1-rim: 1.5;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b1823;
+  --surface: #102434;
+  --ink: #ebe7de;
+  --ink-2: #b9c7d1;
+  --ink-3: #8aa2b3;
+  --rule: #1d3446;
+  --chip: #15344a;
+  --chip-ink: #c3e4f1;
+  --accent: #e2707a;
+  --accent-strong: #f0959c;
+  --link-line: #6cc3df;
+  --link-hover: #93d6ee;
+  --label: #7fc8e3;
+  --logo-tile: #f3f4f2;
+  --band: linear-gradient(180deg, #205686 0%, #1b4b77 60%, #173f66 100%);
+  --g1-shadow: 0.38;
+  --g1-rim: 1.5;
+  color-scheme: dark;
+}
+
+a:hover { color: var(--link-hover); }
+.topbar { border-bottom: 0; }
+.topbar nav a:hover { color: var(--link-hover); }
+
+/* keycaps: wine "Esc" for the university, cream "Shift" keys for the links,
+   wine and aqua keys for the robot controls */
+.eyebrow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.cmu-key {
+  display: inline-block;
+  padding: 6px 12px 8px;
+  border-radius: 6px;
+  background: var(--key-red);
+  color: #f6efe6;
+  letter-spacing: 0.09em;
+  white-space: nowrap;
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.22), 0 2px 0 rgba(4, 18, 30, 0.35);
+}
+.cmu-key::before { content: none; }
+.contact a {
+  width: 46px; height: 46px; padding: 0 0 3px;
+  background: var(--key-cream);
+  color: var(--key-blue-deep);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: inset 0 -4px 0 rgba(23, 63, 99, 0.16), 0 2px 0 rgba(4, 18, 30, 0.35);
+  transition: transform 0.08s ease, background-color 0.15s ease;
+}
+.contact a:hover { background: #ffffff; color: var(--key-blue-deep); }
+.contact a:active { transform: translateY(1px); box-shadow: inset 0 -2px 0 rgba(23, 63, 99, 0.16), 0 1px 0 rgba(4, 18, 30, 0.35); }
+
+.g1-actions button {
+  border: 0;
+  border-radius: 7px;
+  padding: 8px 14px 10px;
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.2), 0 2px 0 rgba(4, 18, 30, 0.35);
+  transition: transform 0.08s ease, background-color 0.15s ease;
+}
+.g1-actions button.primary { background: var(--key-red); color: #ffffff; }
+.g1-actions button.primary:hover { background: #923444; border-color: transparent; color: #ffffff; }
+.g1-actions button:not(.primary) { background: var(--key-aqua); color: #0d2a40; }
+.g1-actions button:not(.primary):hover { background: #6cbcdb; border-color: transparent; }
+.g1-actions button:active { transform: translateY(1px); box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(4, 18, 30, 0.35); }
+
+.hero-photo a { box-shadow: 0 0 0 1px rgba(243, 240, 232, 0.25), 0 10px 26px rgba(4, 18, 30, 0.28); }
+
+.chip, .tags li { color: var(--chip-ink); }
+.news time { color: var(--label); }
+.result { color: var(--label); }
+.theme-toggle { border-color: var(--rule); }
+
+/* tinted cards, and a deep-blue footer like the keyboard's bottom row */
+.feature { background: linear-gradient(180deg, #f4fafd 0%, #ffffff 70%); border-color: #cfe1eb; }
+.foot { background: #173f63; color: #a9c2d5; border-top: 0; }
+.foot a { color: #f3f0e8; text-decoration-color: #5aaccd; }
+.foot a:hover { color: #93d6ee; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .feature { background: linear-gradient(180deg, #14324a 0%, #102434 70%); border-color: #21425a; }
+  :root:not([data-theme="light"]) .foot { background: #08121b; }
+}
+:root[data-theme="dark"] .feature { background: linear-gradient(180deg, #14324a 0%, #102434 70%); border-color: #21425a; }
+:root[data-theme="dark"] .foot { background: #08121b; }
